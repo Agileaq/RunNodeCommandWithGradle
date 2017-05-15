@@ -1,0 +1,16 @@
+.classpath
+*.springBeans
+.project
+.settings
+.DS_Store
+src/main/webapp/META-INF
+.idea
+*.iml
+.gradle
+*.class
+**/build/*.jar
+**/bin/
+out
+build
+logs
+catalina.base_IS_UNDEFINED
