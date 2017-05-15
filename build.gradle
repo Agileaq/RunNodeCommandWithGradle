@@ -28,10 +28,24 @@ dependencies {
 }
 
 task printHelloWorld() {
-    println("Hello Node world!!!!!");
+    doFirst() {
+        println("Hello Node world!!!!!");
+    }
 }
 
 task myScript(type: NodeTask, dependsOn: printHelloWorld) {
-    script = file('src/main/webapp/js/my.js')
+    doFirst() {
+        println("NodeTask will run my.js file with node engine..");
+    }
+
+    File configFile = file('src/main/webapp/js/my.js');
+    configFile = file(configFile.absolutePath);
+    println ("------ filePath: " + configFile.path.toString() + " ------");
+    script = configFile;
 }
 
+task sayHelloWorld() {
+    doLast() {
+        println("Hello world!");
+    }
+}
